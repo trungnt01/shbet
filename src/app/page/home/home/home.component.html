@@ -6,15 +6,25 @@
           <source [src]="srcVideoHeader" type="video/mp4" >
         </video>
       </div>
-      <div class="relative flex px-[161px]">
+      <div class="relative flex px-[161px] h-full">
         <div class="p-2 flex-2">
           <img class="w-[229px] h-[75px]" src="./assets/images/logos/logo.png">
         </div>
-        <div class="p-2 flex-3 text-[#4c9bb6] font-bold text-[16px]">
-          <span>THẾ GIỚI CASINO TRONG TAY BẠN</span>
+        <div class="p-2 flex-3 text-[#4c9bb6] font-bold text-[16px] flex items-center h-[90px]">
+          <div>
+            THẾ GIỚI CASINO TRONG TAY BẠN
+          </div>
         </div>
-        <div class="flex-7">
-
+        <div class="flex-7 w-full flex items-center justify-end">
+          <div class="flex">
+            <button pButton pRipple type="button" label="ĐĂNG NHẬP" class="p-button-rounded button-header bg-button-header"></button>
+            <button pButton pRipple type="button" label="ĐĂNG KÝ" class="p-button-rounded button-header bg-button-header mx-2"></button>
+            <button pButton pRipple type="button" label="CHƠI THỬ" class="p-button-rounded button-header bg-button-header mr-2"></button>
+          </div>
+          <div class="flex">
+            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded border-0 bg-button-header"></button>
+            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded border-0 bg-button-header ml-2"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -26,7 +36,22 @@
     </div>
   </div>
   <div class="nav-bar min-h-[44px]">
-
+    <ul class="flex justify-center h-[44px]">
+      <li *ngFor="let menu of listMenu, let i = index" class="relative w-fit h-full px-2 flex items-center hover:bg-[#ff955e] group">
+        <a href="#">
+          {{menu.name}}
+        </a>
+        <div class="absolute hidden group-hover:block top-[100%] w-auto">
+          <ol>
+            <li *ngFor="let child of menu.children, let i = index"
+                class="min-w-fit tex-[12px] px-[15px] flex justify-start border-[1px] bg-[#010d23] text-white"
+            >
+              {{child.name}}
+            </li>
+          </ol>
+        </div>
+      </li>
+    </ul>
   </div>
   <div>
 

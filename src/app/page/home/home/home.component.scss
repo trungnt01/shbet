@@ -3,8 +3,20 @@
 }
 
 .header {
-  background: linear-gradient(to top, #154283, #0f305b);;
+  background: linear-gradient(to top, #154283, #0f305b);
 }
 
-.header-top {
+.bg-button-header{
+  background: linear-gradient(to top, #357e9f, #6bb0c8);
+}
+
+.button-header {
+  border: none;
+  width: 130px;
+  height: 35px;
+  font-size: 14px;
+}
+
+.button-header:hover {
+  background: linear-gradient(to top, #ff5d08, #ff955e);;
 }
