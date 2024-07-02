@@ -35,7 +35,7 @@
         <a href="#">
           {{menu.name}}
         </a>
-        <div class="absolute hidden group-hover:block top-[100%] left-1/2 transform -translate-x-1/2 w-auto">
+        <div class="absolute hidden group-hover:block top-[100%] left-1/2 transform -translate-x-1/2 w-auto z-10">
           <ol class="min-w-full border-[1px] border-[#32b4e3]">
             <li *ngFor="let child of menu.children, let i = index"
                 class="w-full leading-[30px] text-[12px] px-[15px] border-[#32b4e3] flex justify-start bg-[#010d23] text-white hover:bg-[#2d7699] cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis"
@@ -73,9 +73,21 @@
         <h4 class="">NHỮNG TÍNH NĂNG VƯỢT TRỘI CỦA SHBET</h4>
       </div>
       <div>
-        <ul>
-          <li *ngFor="let outstanding of outstandings;">
-            <p></p>
+        <ul class="flex m-0 p-0">
+          <li class="w-1/4 p-[10px 25px] text-[14px] text-[#000] border-r-[1px] border-[#357e9f] flex items-center justify-between"
+              *ngFor="let outstanding of outstandings; let i = index; let last = last"
+          >
+            <div class="img-outstanding inline-block w-20 h-20">
+              <img src="/assets/images/outstanding/outstanding1.png">
+            </div>
+            <div>
+              <p>
+                {{outstanding.title}}
+              </p>
+              <p>
+                {{outstanding.description}}
+              </p>
+            </div>
           </li>
         </ul>
       </div>

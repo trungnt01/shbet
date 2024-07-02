@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   listMenu: any;
   carousels: any;
   responsiveOptions: any;
+  outstandings: any;
 
   constructor(
     public homeService: HomeService
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.listMenu = this.homeService.getMenuStatic();
+    this.outstandings = this.homeService.getOutstandings();
     this.carousels = [
       'assets/images/carousel/slide1.jpg',
       'assets/images/carousel/slide2.jpg',

@@ -15,6 +15,32 @@ export class HomeService{
 
   }
 
+  getOutstandings(){
+    const outstandings = [
+      {
+        title: 'Thương Hiệu Uy Tín',
+        description: 'Thương hiệu uy tín được nhiều người chơi lựa chọn.',
+        srcImage: 'assets/images/outstanding/outstanding1.jpg'
+      },
+      {
+        title: 'Đa Dạng Sản Phẩm',
+        description: 'Thương hiệu uy tín được nhiều người chơi lựa chọn.',
+        srcImage: 'assets/images/outstanding/outstanding2.jpg'
+      },
+      {
+        title: 'An Ninh Bảo Mật',
+        description: 'Casino Trực Tuyến, Thể Thao, Nổ Hũ, Bắn Cá, Đá Gà... Nhiều sản phẩm đa dạng bạn có thể lựa chọn.',
+        srcImage: 'assets/images/outstanding/outstanding3.jpg'
+      },
+      {
+        title: 'Giao Dịch Nhanh Chóng',
+        description: 'Giao dịch gửi tiền được xử lý trong vòng 1-3 phút khi nhận được khoản chuyển. Thời gian rút tiền trong vòng 5-15 phút.',
+        srcImage: 'assets/images/outstanding/outstanding4.jpg'
+      }
+    ]
+    return outstandings;
+  }
+
   getMenuStatic(){
     const listMenu = [
       {
