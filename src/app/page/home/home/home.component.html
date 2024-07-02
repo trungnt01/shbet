@@ -1,4 +1,4 @@
-<div class="">
+<div class="relative w-full">
   <div class="header flex-row">
     <div class="relative min-h-[90px] w-full header-top">
       <div class="absolute">
@@ -28,23 +28,17 @@
         </div>
       </div>
     </div>
-    <div>
-      title
-    </div>
-    <div>
-
-    </div>
   </div>
   <div class="nav-bar min-h-[44px]">
     <ul class="flex justify-center h-[44px]">
-      <li *ngFor="let menu of listMenu, let i = index" class="relative w-fit h-full px-2 flex items-center hover:bg-[#ff955e] group">
+      <li *ngFor="let menu of listMenu, let i = index" class="relative w-fit h-full px-2 flex items-center hover:bg-[#ff955e] group text-white">
         <a href="#">
           {{menu.name}}
         </a>
-        <div class="absolute hidden group-hover:block top-[100%] w-auto">
-          <ol>
+        <div class="absolute hidden group-hover:block top-[100%] left-1/2 transform -translate-x-1/2 w-auto">
+          <ol class="min-w-full border-[1px] border-[#32b4e3]">
             <li *ngFor="let child of menu.children, let i = index"
-                class="min-w-fit tex-[12px] px-[15px] flex justify-start border-[1px] bg-[#010d23] text-white"
+                class="w-full leading-[30px] text-[12px] px-[15px] border-[#32b4e3] flex justify-start bg-[#010d23] text-white hover:bg-[#2d7699] cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis"
             >
               {{child.name}}
             </li>
@@ -53,7 +47,40 @@
       </li>
     </ul>
   </div>
+
+  <div class="h-[34px] bg-[#000]">
+    title
+  </div>
+  <!--slide-->
   <div>
+    <div>
+      <p-carousel [value]="carousels" styleClass="custom-carousel"
+                  [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="2000" [responsiveOptions]="responsiveOptions"
+                  [showNavigators]="false"
+      >
+        <ng-template let-product pTemplate="item">
+          <p-image [src]="product" alt="Image"></p-image>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+
+  <!--  body-->
+  <div class="w-full flex justify-center">
+    <div class="w-[80%]">
+      <!--  tinh nang vuot troi-->
+      <div class="outstanding">
+        <h4 class="">NHỮNG TÍNH NĂNG VƯỢT TRỘI CỦA SHBET</h4>
+      </div>
+      <div>
+        <ul>
+          <li *ngFor="let outstanding of outstandings;">
+            <p></p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
 
   </div>
 </div>

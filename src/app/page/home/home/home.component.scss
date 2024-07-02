@@ -20,3 +20,24 @@
 .button-header:hover {
   background: linear-gradient(to top, #ff5d08, #ff955e);;
 }
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  background-color: #e9ecef;
+  width: 1rem;
+  height: 1rem;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  border-radius: 50%;
+}
+
+.outstanding {
+  height: 81px;
+  margin: 30px auto;
+  color: #337c9d;
+  font-family: roboto;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 81px;
+  text-align: center;
+  background: url("/assets/images/outstanding/outstanding.png") no-repeat center;
+  text-transform: uppercase;
+}
