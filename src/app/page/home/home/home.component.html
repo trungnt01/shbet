@@ -67,21 +67,24 @@
 
   <!--  body-->
   <div class="w-full flex justify-center">
-    <div class="w-[80%]">
+    <div class="w-[75%]">
       <!--  tinh nang vuot troi-->
-      <div class="outstanding">
-        <h4 class="">NHỮNG TÍNH NĂNG VƯỢT TRỘI CỦA SHBET</h4>
-      </div>
-      <div>
+      <div class="">
+        <div class="header-part">
+          <h4 class="">NHỮNG TÍNH NĂNG VƯỢT TRỘI CỦA SHBET</h4>
+        </div>
         <ul class="flex m-0 p-0">
-          <li class="w-1/4 p-[10px 25px] text-[14px] text-[#000] border-r-[1px] border-[#357e9f] flex items-center justify-between"
-              *ngFor="let outstanding of outstandings; let i = index; let last = last"
+          <li
+            *ngFor="let outstanding of outstandings; let i = index; let last = last"
+            [ngClass]="{ 'border-r-[0px]': last, 'border-r-[1px] border-[#357e9f]': !last }"
+            class="outstanding-child w-1/4 py-[10px] px-[25px] text-[14px] text-[#000] flex items-center justify-between"
           >
-            <div class="img-outstanding inline-block w-20 h-20">
-              <img src="/assets/images/outstanding/outstanding1.png">
+            <div class="img-outstanding-container flex-shrink-0">
+              <span class="img-outstanding block bg-cover bg-no-repeat bg-center"
+              [ngStyle]="{ 'background-image': 'url(' + outstanding.srcImage + ')' }"></span>
             </div>
-            <div>
-              <p>
+            <div class="pl-4 flex-1">
+              <p class="font-bold">
                 {{outstanding.title}}
               </p>
               <p>
@@ -90,9 +93,78 @@
             </div>
           </li>
         </ul>
+
+      </div>
+
+      <!-- ĐẠI SỨ THƯƠNG HIỆU ANDRÉS INIESTA-->
+      <div class="my-[30px]">
+        <div class="outstanding">
+          <h4 class="">ĐẠI SỨ THƯƠNG HIỆU ANDRÉS INIESTA</h4>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+      <!-- san pham-->
+      <div>
+        <div class="header-part">
+          <h4 class="">SẢN PHẨM</h4>
+        </div>
+        <div>
+          <ul class="flex m-0 p-0 justify-center items-center gap-2">
+            <li *ngFor="let product of products; let i = index; let last = last"
+              class="product-li block relative h-[358px] p-4"
+                [ngClass]="{'active': activeProduct === i}"
+                (mouseenter)="activeProduct = i"
+            >
+
+              <div class="flex items-center">
+                <h2 class="title-product">{{product.title}}</h2>
+                <img *ngIf="activeProduct !== i" class="w-[22px] h-[22px] ml-2" src="assets/icons/icon-next.png">
+              </div>
+              <span class="sub-title-product" *ngIf="activeProduct === i">
+                SẢNH HOT
+              </span>
+              <button class="" *ngFor="let child of product.childrens">
+                {{child}}
+              </button>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--      tro choi yeu thich-->
+      <div>
+        <div class="header-part">
+          <h4 class="">TRÒ CHƠI YÊU THÍCH</h4>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+      <!--      TẢI APP-->
+      <div>
+        <div class="header-part">
+          <h4 class="">TẢI APP</h4>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+      <!-- HƯỚNG DẪN-->
+      <div>
+        <div class="header-part">
+          <h4 class="">HƯỚNG DẪN</h4>
+        </div>
+        <div>
+
+        </div>
       </div>
 
     </div>
-
   </div>
 </div>

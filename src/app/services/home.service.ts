@@ -20,25 +20,93 @@ export class HomeService{
       {
         title: 'Thương Hiệu Uy Tín',
         description: 'Thương hiệu uy tín được nhiều người chơi lựa chọn.',
-        srcImage: 'assets/images/outstanding/outstanding1.jpg'
+        srcImage: '/assets/images/outstanding/outstanding1.png'
       },
       {
         title: 'Đa Dạng Sản Phẩm',
         description: 'Thương hiệu uy tín được nhiều người chơi lựa chọn.',
-        srcImage: 'assets/images/outstanding/outstanding2.jpg'
+        srcImage: '/assets/images/outstanding/outstanding2.png'
       },
       {
         title: 'An Ninh Bảo Mật',
         description: 'Casino Trực Tuyến, Thể Thao, Nổ Hũ, Bắn Cá, Đá Gà... Nhiều sản phẩm đa dạng bạn có thể lựa chọn.',
-        srcImage: 'assets/images/outstanding/outstanding3.jpg'
+        srcImage: '/assets/images/outstanding/outstanding3.png'
       },
       {
         title: 'Giao Dịch Nhanh Chóng',
         description: 'Giao dịch gửi tiền được xử lý trong vòng 1-3 phút khi nhận được khoản chuyển. Thời gian rút tiền trong vòng 5-15 phút.',
-        srcImage: 'assets/images/outstanding/outstanding4.jpg'
+        srcImage: '/assets/images/outstanding/outstanding4.png'
       }
     ]
     return outstandings;
+  }
+
+  getProducts(){
+    const products = [
+      {
+        title: 'THỂ THAO',
+        srcImage: '/assets/images/product/product1.png',
+        childrens: [
+          "SABA Thể Thao", "CMD Thể Thao", "UG Thể Thao", "SBO Thể Thao", "CR Thể Thao", "IM Thể Thao"
+        ]
+      },
+      {
+        title: 'CASINO',
+        srcImage: '/assets/images/product/product2.png',
+        childrens: [
+          "DG Trực Tuyến", "SE Trực Tuyến", "EVO Trực Tuyến", "WM Trực Tuyến", "MT Trực Tuyến", "AG Trực Tuyến", "SA Trực Tuyến"
+        ]
+      },
+      {
+        title: 'NỔ HŨ',
+        srcImage: '/assets/images/product/product3.png',
+        childrens: [
+          'PG Điện Tử', 'JILI Điện Tử', 'TP Điện Tử', 'FC Điện Tử', 'PP Điện Tử', 'MG Điện Tử', 'CQ9 Điện Tử'
+        ]
+      },
+      {
+        title: 'BẮN CÁ',
+        srcImage: '/assets/images/product/product4.png',
+        childrens: [
+          'JILI bắn cá', 'TP bắn cá', 'JDB bắn cá', 'BG bắn cá', 'KA bắn cá', 'FTG bắn cá', 'R88 bắn cá'
+        ]
+      },
+      {
+        title: 'GAME BÀI',
+        srcImage: '/assets/images/product/product5.png',
+        childrens: [
+          'KM Game Bài 3d', 'R88 Game Bài 3d', 'V8 Game Bài 3d', 'JILI Game Bài 3d', 'TP Game Bài 3d' , 'MG Game Bài 3d', 'FTG Game Bài 3d'
+        ]
+      },
+      {
+        title: 'XỔ SỐ',
+        srcImage: '/assets/images/product/product6.png',
+        childrens: [
+          'TP Xổ Số', 'VR Xổ Số', 'GW Xổ Số', 'SW Xổ Số'
+        ]
+      },
+      {
+        title: 'ĐÁ GÀ',
+        srcImage: '/assets/images/product/product7.png',
+        childrens: [
+          'Ws168 Đá Gà'
+        ]
+      },
+    ]
+    return products;
+  }
+
+  getCarousel(){
+    const carousels = [
+      'assets/images/carousel/slide1.jpg',
+      'assets/images/carousel/slide2.jpg',
+      'assets/images/carousel/slide3.jpg',
+      'assets/images/carousel/slide4.jpg',
+      'assets/images/carousel/slide5.jpg',
+      'assets/images/carousel/slide6.jpg',
+      'assets/images/carousel/slide7.jpg',
+    ]
+    return carousels;
   }
 
   getMenuStatic(){

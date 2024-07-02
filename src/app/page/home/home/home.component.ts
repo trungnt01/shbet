@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   carousels: any;
   responsiveOptions: any;
   outstandings: any;
+  products: any;
+  activeProduct: any = false;
 
   constructor(
     public homeService: HomeService
@@ -41,15 +43,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.listMenu = this.homeService.getMenuStatic();
     this.outstandings = this.homeService.getOutstandings();
-    this.carousels = [
-      'assets/images/carousel/slide1.jpg',
-      'assets/images/carousel/slide2.jpg',
-      'assets/images/carousel/slide3.jpg',
-      'assets/images/carousel/slide4.jpg',
-      'assets/images/carousel/slide5.jpg',
-      'assets/images/carousel/slide6.jpg',
-      'assets/images/carousel/slide7.jpg',
-    ]
+    this.products = this.homeService.getProducts();
+    this.carousels = this.homeService.getCarousel();
+  }
+
+  onMouseEnterProduct(){
+    this.activeProduct = !this.activeProduct;
+  }
+
+  onMouseLeaveProduct(){
+    this.activeProduct = !this.activeProduct;
   }
 
 }
