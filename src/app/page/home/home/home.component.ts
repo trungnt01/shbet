@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeService} from "../../../services/home.service";
+import {last} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,16 @@ export class HomeComponent implements OnInit {
   responsiveOptions: any;
   outstandings: any;
   products: any;
-  activeProduct: any = false;
+  gameFavorites: any;
+  activeProduct: any = 0;
+  games: any;
+  instructions: any;
+  gameFavoriteActive: number = 0;
+  isCollapsed: boolean = false;
+  srcIframe: any;
+  carouselsBrand: any;
+
+  fullText = " là một nhà cái có giấy phép cá cược trực tuyến hợp pháp do Isle of Man và Khu kinh tế Cagayan and Freeport cấp. Với bề dày kinh nghiệm và danh tiếng phục vụ hơn 10 triệu người chơi, SHBET đã và đang khẳng định vị thế của mình trên thị trường game trực tuyến. Với tư cách là một công ty trò chơi trực tuyến trực thuộc Tổng bộ Liên minh OKVIP có trụ sở tại Luân Đôn, Anh, sở hữu đội ngũ nhân tài chuyên nghiệp đông đảo cung cấp sản phẩm phục vụ chất lượng cao. SHBET đảm bảo không tiết lộ thông tin cá nhân khách hàng cho bất kỳ bên thứ ba nào, sử dụng tiêu chuẩn mã hoá dữ liệu ở mức cao nhất. Tất cả thông tin cá nhân đều được thông qua hệ thống bảo mật - Secure Socket (Chuẩn mã hóa SS 128-bit), đồng thời được bảo vệ trong môi trường quản lý an toàn đảm bảo không thể truy cập từ các khu vực mạng công cộng. Tất cả dữ liệu ra vào đều bị hạn chế, giám sát nghiêm ngặt và quản lý chặt chẽ nhằm mang đến cho người chơi trải nghiệm người dùng an toàn tuyệt đối."
 
   constructor(
     public homeService: HomeService
@@ -38,6 +48,7 @@ export class HomeComponent implements OnInit {
       }
     ];
 
+    this.srcIframe = "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAndresIniesta%2Fvideos%2F688592966738711%2F%3Fref%3Dembed_video&show_text=0&width=560";
   }
 
   ngOnInit(): void {
@@ -45,6 +56,10 @@ export class HomeComponent implements OnInit {
     this.outstandings = this.homeService.getOutstandings();
     this.products = this.homeService.getProducts();
     this.carousels = this.homeService.getCarousel();
+    this.gameFavorites = this.homeService.getGameFavorite();
+    this.getGameFavorite(0);
+    this.instructions = this.homeService.getInstruction();
+    this.carouselsBrand = this.homeService.getCarouselsBrand();
   }
 
   onMouseEnterProduct(){
@@ -53,6 +68,15 @@ export class HomeComponent implements OnInit {
 
   onMouseLeaveProduct(){
     this.activeProduct = !this.activeProduct;
+  }
+
+  getGameFavorite(index: number) {
+    this.gameFavoriteActive = index;
+    this.games = this.gameFavorites[this.gameFavoriteActive].childrens;
+  }
+
+  toggleText() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
 }

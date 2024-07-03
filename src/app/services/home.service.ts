@@ -109,6 +109,131 @@ export class HomeService{
     return carousels;
   }
 
+  getCarouselsBrand(){
+    const carouselsBrand = [
+      '/assets/images/brandAmbassador/brandAmbassador2.png',
+      '/assets/images/brandAmbassador/brandAmbassador3.png',
+      '/assets/images/brandAmbassador/brandAmbassador4.png',
+      '/assets/images/brandAmbassador/brandAmbassador5.png',
+      '/assets/images/brandAmbassador/brandAmbassador6.png',
+      '/assets/images/brandAmbassador/brandAmbassador7.png',
+    ]
+    return carouselsBrand;
+  }
+
+  getGameFavorite(){
+    const gameFavorites = [
+      {
+        title: 'HOT GAME',
+        childrens: [
+          {
+            title: 'DG Bacarat',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'Sexy Bacarat',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame2.png',
+          },
+          {
+            title: 'WM Xóc Đĩa',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'Evolution Tài Xỉu',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'Saba Thể Thao',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'GW Xổ Số',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'TP Bắn cá Dễ Dàng',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'TP Nhị Gia bắn cá',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'FC bắn cá Vũ Trụ',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'Bài Cào',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'Tiến Lên',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },{
+            title: 'Lửa Vàng Bùng Nổ 7',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+        ]
+      },
+      {
+        title: 'PG Điện Tử',
+        childrens: [
+          {
+            title: 'DG Bacarat',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame1.png',
+          },
+          {
+            title: 'Sexy Bacarat',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame2.png',
+          },
+
+        ]
+      },
+      {
+        title: 'JILI Điện Tử',
+        childrens: [
+          {
+            title: 'HOT GAME',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame2.png',
+          }
+
+        ]
+      },
+      {
+        title: 'TP Điện Tử',
+        childrens: [
+          {
+            title: 'HOT GAME',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame2.png',
+          }
+
+        ]
+      },
+      {
+        title: 'JILI BẮN CÁ',
+        childrens: [
+          {
+            title: 'HOT GAME',
+            srcImage: '/assets/images/favoriteGames/hotGame/favoriteGame2.png',
+          }
+
+        ]
+      },
+    ]
+    return gameFavorites;
+  }
+
+  getInstruction(){
+    const instruction = [
+      '/assets/images/instruction/instruction1.png',
+      '/assets/images/instruction/instruction2.png',
+      '/assets/images/instruction/instruction3.png',
+      '/assets/images/instruction/instruction4.png',
+      '/assets/images/instruction/instruction5.jpg',
+    ]
+    return instruction;
+  }
+
   getMenuStatic(){
     const listMenu = [
       {
