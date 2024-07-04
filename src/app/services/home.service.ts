@@ -121,6 +121,29 @@ export class HomeService{
     return carouselsBrand;
   }
 
+  getPaymentMethod(){
+    const paymentMethods = [
+      '/assets/images/paymentMethod/paymentMethod1.png',
+      '/assets/images/paymentMethod/paymentMethod2.png',
+      '/assets/images/paymentMethod/paymentMethod3.png',
+      '/assets/images/paymentMethod/paymentMethod4.png',
+      '/assets/images/paymentMethod/paymentMethod5.png',
+      '/assets/images/paymentMethod/paymentMethod6.png',
+      '/assets/images/paymentMethod/paymentMethod7.png',
+      '/assets/images/paymentMethod/paymentMethod8.png',
+    ]
+    return paymentMethods;
+  }
+
+  getSocial(){
+    const socials = [
+      '/assets/images/footer/socialPlasform/facebook.png',
+      '/assets/images/footer/socialPlasform/youtube.png',
+      '/assets/images/footer/socialPlasform/telegram.png',
+    ]
+    return socials;
+  }
+
   getGameFavorite(){
     const gameFavorites = [
       {

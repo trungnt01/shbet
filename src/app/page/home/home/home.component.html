@@ -80,9 +80,8 @@
               [ngClass]="{ 'border-r-[0px]': last, 'border-r-[1px] border-[#357e9f]': !last }"
               class="outstanding-child w-1/4 py-[10px] px-[25px] text-[14px] text-[#000] flex items-center justify-between"
             >
-              <div class="img-outstanding-container flex-shrink-0">
-                <span class="img-outstanding block bg-cover bg-no-repeat bg-center"
-                [ngStyle]="{ 'background-image': 'url(' + outstanding.srcImage + ')' }"></span>
+              <div class="">
+                <img class="img-outstanding" [src]="outstanding.srcImage" alt="">
               </div>
               <div class="pl-4 flex-1">
                 <p class="font-bold">
@@ -99,12 +98,13 @@
 
         <!-- ĐẠI SỨ THƯƠNG HIỆU ANDRÉS INIESTA-->
         <div class="my-[30px]">
-          <div class="outstanding">
+          <div class="header-part">
             <h4 class="">ĐẠI SỨ THƯƠNG HIỆU ANDRÉS INIESTA</h4>
           </div>
-          <div class="w-full flex">
-            <div class="w-3/5">
+          <div class="w-full flex justify-between h-[105%]">
+            <div class="w-[63%]">
               <iframe
+                class="h-[105%] w-full rounded-[35px]"
                 allow="autoyplay"
                 allowfullscreen="true"
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAndresIniesta%2Fvideos%2F688592966738711%2F%3Fref%3Dembed_video&show_text=0&width=560"
@@ -112,18 +112,17 @@
 
               </iframe>
             </div>
-            <div class="w-2/5">
-              <div>
+            <div class="w-[35%]">
+              <div class="flex justify-end">
                 <img src="/assets/images/brandAmbassador/brandAmbassador1.png">
               </div>
               <div class="mt-4">
                 <p-carousel [value]="carouselsBrand" styleClass="custom-carousel"
-                            [numVisible]="2" [numScroll]="1" [circular]="true" [autoplayInterval]="2000000000" [responsiveOptions]="responsiveOptions"
+                            [numVisible]="2" [numScroll]="1" [circular]="true" [autoplayInterval]="2000" [responsiveOptions]="responsiveOptions"
                             [showNavigators]="false" [showIndicators]="false"
                 >
                   <ng-template let-brand pTemplate="item">
-<!--                    <p-image [src]="brand" alt="Image"></p-image>-->
-                    <img [src]="brand">
+                    <img alt="" [src]="brand">
                   </ng-template>
                 </p-carousel>
               </div>
@@ -132,7 +131,7 @@
         </div>
 
         <!-- san pham-->
-        <div>
+        <div class="mt-5">
           <div class="header-part">
             <h4 class="">SẢN PHẨM</h4>
           </div>
@@ -266,11 +265,11 @@
       <div class="w-[75%]">
         <div class="flex">
           <div class="w-1/2 flex items-center">
-            <div class="w-1/2">
+            <div class="w-1/2 max-w-[334px] max-h-[189px]">
               <img src="assets/images/logos/logo_footer.png">
             </div>
-            <div class="w-1/2">
-              <h2 class="slogan text-[#4c9bb6] text-[38px] font-bold">
+            <div class="w-1/2 pl-[20px]">
+              <h2 class="text-[#4c9bb6] text-[37px] font-bold">
                 THẾ GIỚI CASINO TRONG TAY BẠN
               </h2>
             </div>
@@ -301,20 +300,24 @@
             </div>
           </div>
           <div class="w-1/2 flex justify-end">
-            <div class="w-4/5 flex">
+            <div class="w-[85%] flex">
               <div class="w-1/2">
                 <h5 class="mb-[15px] text-[#2d7699] text-2xl font-normal">GIẤY PHÉP KINH DOANH</h5>
-                <img src="">
+                <div class="">
+                  <img class="business-license" src="assets/images/logos/businessLicense.png" alt="">
+                </div>
               </div>
               <div class="w-1/2">
                 <h5 class="mb-[15px] text-[#2d7699] text-2xl font-normal">PHƯƠNG THỨC THANH TOÁN</h5>
-
+                <div class="grid grid-cols-4 gap-[36px]">
+                  <img *ngFor="let payment of paymentMethods" class="payment-method" [src]="payment" alt="">
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex mt-10">
           <div class="w-1/2 flex">
             <div class="w-1/2 text-[#1f607d]">
               <h3 class="font-bold text-[33px]">Đối Tác Chính Thức</h3>
@@ -329,11 +332,16 @@
           <div class="w-1/2 flex justify-end">
             <div class="w-4/5 flex">
               <div class="w-1/2">
-                <h5 class="mb-[15px] text-[#2d7699] text-2xl font-normal">THEO DÕI CHÚNG TÔI</h5>
-                <img src="">
+                <div class="w-fit">
+                  <h5 class="mb-[15px] text-[#2d7699] text-2xl font-normal w-fit">THEO DÕI CHÚNG TÔI</h5>
+                  <div class="flex justify-between items-center w-full max-w-full">
+                    <img *ngFor="let social of socials" class="social" [src]="social" alt="">
+                  </div>
+                </div>
               </div>
               <div class="w-1/2">
                 <h5 class="mb-[15px] text-[#2d7699] text-2xl font-normal">CHƠI CÓ TRÁCH NGHIỆM</h5>
+                <img class="play-responsibly" src="assets/images/footer/playResponsibly/playResponsibly.png" alt="">
               </div>
             </div>
           </div>
