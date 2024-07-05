@@ -132,15 +132,19 @@ const config = {
       xxl: '1536px'
     },
     extend  : {
-      // backgroundImage: {
-      //   'home-bg-desktop': "url('/assets/images/new-ui/homepage/homepage-desktop.jpg')",
-      //   'home-bg-mobile': "url('/assets/images/new-ui/homepage/homepage-1.svg')",
-      //   'dot-circle': "url('/assets/images/new-ui/homepage/dot-circle.png')",
-      //   'right-circle': "url('/assets/images/new-ui/homepage/background1.png')",
-      // },
-      animation               : {
-        'spin-slow': 'spin 3s linear infinite'
+      animation: {
+        marquee: 'marquee 30s linear infinite',
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' }
+        }
+      },
+
+      // animation               : {
+      //   'spin-slow': 'spin 3s linear infinite'
+      // },
       colors                  : {
         gray: colors.slate,
         'button-next': 'rgba(20, 21, 21, 0.5)',

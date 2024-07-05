@@ -6,24 +6,26 @@
           <source [src]="srcVideoHeader" type="video/mp4" >
         </video>
       </div>
-      <div class="relative flex px-[161px] h-full">
-        <div class="p-2 flex-2">
-          <img class="w-[229px] h-[75px]" src="./assets/images/logos/logo.png">
-        </div>
-        <div class="p-2 flex-3 text-[#4c9bb6] font-bold text-[16px] flex items-center h-[90px]">
-          <div>
-            THẾ GIỚI CASINO TRONG TAY BẠN
+      <div class="flex justify-center">
+        <div class="w-[75%] relative flex h-full">
+          <div class="p-2 flex-2">
+            <img class="w-[229px] h-[75px]" src="./assets/images/logos/logo.png">
           </div>
-        </div>
-        <div class="flex-7 w-full flex items-center justify-end">
-          <div class="flex">
-            <button pButton pRipple type="button" label="ĐĂNG NHẬP" class="p-button-rounded button-header bg-button-header"></button>
-            <button pButton pRipple type="button" label="ĐĂNG KÝ" class="p-button-rounded button-header bg-button-header mx-2"></button>
-            <button pButton pRipple type="button" label="CHƠI THỬ" class="p-button-rounded button-header bg-button-header mr-2"></button>
+          <div class="p-2 flex-3 text-[#4c9bb6] font-bold text-[16px] flex items-center h-[90px]">
+            <div>
+              THẾ GIỚI CASINO TRONG TAY BẠN
+            </div>
           </div>
-          <div class="flex">
-            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded border-0 bg-button-header"></button>
-            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded border-0 bg-button-header ml-2"></button>
+          <div class="flex-7 w-full flex items-center justify-end">
+            <div class="flex">
+              <button pButton pRipple type="button" (click)="login.showDialog()" label="ĐĂNG NHẬP" class="p-button-rounded button-header bg-button-header"></button>
+              <button pButton pRipple type="button" label="ĐĂNG KÝ" class="p-button-rounded button-header bg-button-header mx-2"></button>
+              <button pButton pRipple type="button" label="CHƠI THỬ" class="p-button-rounded button-header bg-button-header mr-2"></button>
+            </div>
+            <div class="flex">
+              <div class="btn-language"></div>
+              <div class="btn-help"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -32,10 +34,11 @@
   <div class="nav-bar min-h-[44px]">
     <ul class="flex justify-center h-[44px]">
       <li *ngFor="let menu of listMenu, let i = index" class="relative w-fit h-full px-2 flex items-center hover:bg-[#ff955e] group text-white">
-        <a href="#">
+        <a href="#" class="flex items-center">
+          <i class="icon-menu-header" [ngStyle]="{ 'background-image': 'url(' + menu.icon + ')' }"></i>
           {{menu.name}}
         </a>
-        <div class="absolute hidden group-hover:block top-[100%] left-1/2 transform -translate-x-1/2 w-auto z-10">
+        <div *ngIf="menu.children.length > 0" class="absolute hidden group-hover:block top-[100%] left-1/2 transform -translate-x-1/2 w-auto z-999">
           <ol class="min-w-full border-[1px] border-[#32b4e3]">
             <li *ngFor="let child of menu.children, let i = index"
                 class="w-full leading-[30px] text-[12px] px-[15px] border-[#32b4e3] flex justify-start bg-[#010d23] text-white hover:bg-[#2d7699] cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis"
@@ -48,8 +51,20 @@
     </ul>
   </div>
 
-  <div class="h-[34px] bg-[#000]">
-    title
+  <div class="h-[34px] bg-[#000] flex justify-center">
+    <div class="w-[75%] flex items-center text-white relative">
+      <img src="assets/images/logos/loa.png" alt="Tin tuc">
+      <div class="overflow-hidden whitespace-nowrap relative w-full">
+        <div class="marquee relative left-0 top-0 flex space-x-8" #marquee>
+          <span class="inline-block py-2 hover:underline"
+                *ngFor="let item of items"
+                (mouseover)="stopMarquee()"
+                (mouseout)="startMarquee()">
+            {{ item }}
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
   <!--slide-->
   <div>
@@ -104,17 +119,17 @@
           <div class="w-full flex justify-between h-[105%]">
             <div class="w-[63%]">
               <iframe
-                class="h-[105%] w-full rounded-[35px]"
-                allow="autoyplay"
-                allowfullscreen="true"
+                title='dai su thuong hieu'
+                class="h-[100%] w-full rounded-[35px]"
+                allow="autoplay"
+                allowfullscreen="allowfullscreen"
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAndresIniesta%2Fvideos%2F688592966738711%2F%3Fref%3Dembed_video&show_text=0&width=560"
               >
-
               </iframe>
             </div>
-            <div class="w-[35%]">
+            <div class="w-[36%]">
               <div class="flex justify-end">
-                <img src="/assets/images/brandAmbassador/brandAmbassador1.png">
+                <img src="/assets/images/brandAmbassador/brandAmbassador1.png" alt="">
               </div>
               <div class="mt-4">
                 <p-carousel [value]="carouselsBrand" styleClass="custom-carousel"
@@ -145,7 +160,7 @@
                 <div class="">
                   <div class="flex items-center">
                     <h2 class="title-product w-fit text-[20px]">{{product.title}}</h2>
-                    <img *ngIf="activeProduct !== i" class="w-[22px] h-[22px] ml-2" src="assets/icons/icon-next.png">
+                    <img *ngIf="activeProduct !== i" class="w-[22px] h-[22px] ml-2" src="assets/icons/icon-next.png" alt="">
                   </div>
                   <div class="flex-row" *ngIf="activeProduct === i">
                     <span class="sub-title-product" *ngIf="activeProduct === i">
@@ -159,7 +174,7 @@
                   </div>
                 </div>
                 <div class="" [ngClass]="{'container-img-product-active': activeProduct === i}">
-                  <img class="img-product w-full h-full mt-[58px]" [ngClass]="{'img-product-active': activeProduct === i}" [src]="product.srcImage">
+                  <img class="img-product w-full h-full mt-[58px]" alt="" [ngClass]="{'img-product-active': activeProduct === i}" [src]="product.srcImage">
                 </div>
               </li>
             </ul>
@@ -182,7 +197,7 @@
             <ul class="mt-8 flex flex-wrap justify-center">
               <li class="w-1/6 mb-2" *ngFor="let game of games; let index = index">
                 <div class="p-8">
-                  <img class="w-full" [src]="game.srcImage">
+                  <img class="w-full" [src]="game.srcImage" alt="">
                   <button class="w-full text-center mt-2 button-game">
                     {{game.title}}
                   </button>
@@ -203,7 +218,7 @@
           <div class="w-2/5 flex flex-col">
             <div class="flex w-full">
               <div class="w-[25%]">
-                <img class="min-w-[100px] h-[100px]" src="assets/images/downloadApp/logo.png">
+                <img class="min-w-[100px] h-[100px]" src="assets/images/downloadApp/logo.png" alt="">
               </div>
               <div class="w-[75%] text-[#337c9d] download-app-title">
                 <h2 class="text-6xl font-black">
@@ -217,23 +232,23 @@
             <div class="w-full flex flex-row justify-center mt-20">
               <div class="w-2/5 flex flex-col justify-center">
                 <div class="flex justify-center">
-                  <img class="w-[137px] h-[137px]" src="assets/images/downloadApp/iphone.png">
+                  <img class="w-[137px] h-[137px]" src="assets/images/downloadApp/iphone.png" alt="">
                 </div>
-                <img src="assets/images/downloadApp/appstore.png">
+                <img src="assets/images/downloadApp/appstore.png" alt="">
               </div>
               <div class="w-2/5 flex flex-col justify-center">
                 <div class="flex justify-center">
-                  <img class="w-[137px] h-[137px]" src="assets/images/downloadApp/android.png">
+                  <img class="w-[137px] h-[137px]" src="assets/images/downloadApp/android.png" alt="">
                 </div>
-                <img src="assets/images/downloadApp/ggPlay.png">
+                <img src="assets/images/downloadApp/ggPlay.png" alt="">
               </div>
             </div>
           </div>
           <div class="w-1/5">
-            <img src="assets/images/downloadApp/phone.png">
+            <img src="assets/images/downloadApp/phone.png" alt="">
           </div>
           <div class="w-2/5">
-            <img src="assets/images/downloadApp/human.png">
+            <img src="assets/images/downloadApp/human.png" alt="">
           </div>
         </div>
       </div>
@@ -266,7 +281,7 @@
         <div class="flex">
           <div class="w-1/2 flex items-center">
             <div class="w-1/2 max-w-[334px] max-h-[189px]">
-              <img src="assets/images/logos/logo_footer.png">
+              <img src="assets/images/logos/logo_footer.png" alt="">
             </div>
             <div class="w-1/2 pl-[20px]">
               <h2 class="text-[#4c9bb6] text-[37px] font-bold">
@@ -295,7 +310,7 @@
             </div>
             <div class="w-1/2 flex justify-end">
               <div class="w-[65%]">
-                <img src="assets/images/logos/signFooter.png">
+                <img src="assets/images/logos/signFooter.png" alt="">
               </div>
             </div>
           </div>
@@ -325,7 +340,7 @@
             </div>
             <div class="w-1/2 flex justify-end">
               <div class="w-full">
-                <img src="assets/images/logos/logoPartner.png">
+                <img src="assets/images/logos/logoPartner.png" alt="">
               </div>
             </div>
           </div>
@@ -353,3 +368,5 @@
     </div>
     <!-- end footer-->
 </div>
+
+<app-login></app-login>

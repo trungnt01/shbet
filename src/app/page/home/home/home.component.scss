@@ -18,27 +18,51 @@
 }
 
 .button-header:hover {
-  background: linear-gradient(to top, #ff5d08, #ff955e);;
+  background: linear-gradient(to top, #ff5d08, #ff955e);
+}
+
+.btn-language{
+  width: 45px;
+  height: 45px;
+  background: url("/assets/images/logos/nation/vietNam.png") no-repeat;
+}
+
+.btn-help {
+  width: 45px;
+  height: 45px;
+  margin-top: 5px;
+  background: url("/assets/images/logos/hoTro.png") no-repeat;
 }
 
 .class-footer {
  background: linear-gradient(180deg, #fff -8.86%, #f8fdff 57.68%, #6bb0c8 132.73%);
 }
 
-//.p-carousel-indicator .p-link{
-//  background-color: red;
-//  border-radius: 100%;
-//  width: 10px;
-//  height: 10px;
-//}
-//
-//.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
-//  background-color: red;
-//  border-radius: 100%;
-//  width: 10px;
-//  height: 10px;
-//  background-color: #3B82F6;
-//}
+.icon-menu-header {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.marquee {
+  z-index: 10;
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 70s linear infinite;
+}
+
+.marquee.paused {
+  animation-play-state: paused;
+}
 
 .header-part {
   height: 81px;

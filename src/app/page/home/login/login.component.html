@@ -1,0 +1,39 @@
+<p-dialog [(visible)]="display" [showHeader]="false" [dismissableMask]="false" [modal]="true" [responsive]="true" class="login-modal w-[580px]">
+  <div class=" px-[50px] py-5">
+    <div class="flex text-center">
+      <div class="w-1/2 text-center">
+        <img src="assets/images/login/logo.png" alt="Tin tuc" class="mx-auto mb-4">
+      </div>
+      <div class="w-full text-left mb-4">
+        <div class="font-semibold">Đại Sứ Thương Hiệu</div>
+        <div class="text-lg">Iniesta</div>
+        <div class="font-semibold mt-2">Đối Tác Chính Thức</div>
+        <div class="text-lg">Villarreal CF & OKVIP</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="username" class="sr-only">Tên tài khoản</label>
+      <input id="username" type="text" class="w-full p-2 border border-gray-300 rounded" placeholder="Vui lòng nhập tên tài khoản">
+    </div>
+    <div class="mb-4">
+      <label for="password" class="sr-only">Mật khẩu</label>
+      <input id="password" type="password" class="w-full p-2 border border-gray-300 rounded" placeholder="Vui lòng nhập mật khẩu">
+    </div>
+    <div class="mb-4">
+      <label for="verification" class="sr-only">Mã xác minh</label>
+      <input id="verification" type="text" class="w-full p-2 border border-gray-300 rounded" placeholder="Vui lòng nhập mã xác minh">
+    </div>
+    <div class="text-xs text-gray-600 mb-4">
+      Lưu ý: Tuyệt đối không cung cấp "Mật khẩu đăng nhập" hoặc "Mật khẩu rút tiền" cho bất kỳ ai.
+    </div>
+    <button class="w-full bg-blue-600 text-white py-2 rounded">Đăng Nhập</button>
+    <div class="text-center mt-4">
+      Bạn chưa có tài khoản? <a href="#" class="text-blue-600">Đăng Ký Ngay!</a>
+    </div>
+    <div class="flex justify-around mt-4">
+      <button class="bg-gray-200 text-gray-800 py-2 px-4 rounded">Lấy Lại Mật Khẩu Qua Số Điện Thoại</button>
+      <button class="bg-gray-200 text-gray-800 py-2 px-4 rounded">Lấy Lại Mật Khẩu Qua Địa Chỉ Email</button>
+    </div>
+  </div>
+</p-dialog>

@@ -257,14 +257,17 @@ export class HomeService{
     return instruction;
   }
 
+
   getMenuStatic(){
     const listMenu = [
       {
         name: 'TRANG CHỦ',
+        icon: 'assets/images/logos/header/home.png',
         children: []
       },
       {
         name: 'CASINO',
+        icon: 'assets/images/logos/header/casino.png',
         children: [
           {
             name: "DG Trực Tuyến",
@@ -322,6 +325,7 @@ export class HomeService{
       },
       {
         name: 'NỔ HŨ',
+        icon: 'assets/images/logos/header/noHu.png',
         children :[
           {
             name: "PG Điện Tử",
@@ -375,42 +379,47 @@ export class HomeService{
       },
       {
         name: 'BẮN CÁ',
+        icon: 'assets/images/logos/header/banCa.png',
         children :[]
       },
       {
         name: 'THỂ THAO',
+        icon: 'assets/images/logos/header/theThao.png',
         children :[]
       },
       {
         name: 'GAME BÀI',
+        icon: 'assets/images/logos/header/gameBai.png',
         children :[]
       },
       {
         name: 'ĐÁ GÀ',
+        icon: 'assets/images/logos/header/daGa.png',
         children :[]
       },
       {
         name: 'XỔ SỐ',
-        children :[]
-      },
-      {
-        name: 'GAME BÀI',
+        icon: 'assets/images/logos/header/xoSo.png',
         children :[]
       },
       {
         name: 'KHUYẾN MÃI',
+        icon: 'assets/images/logos/header/khuyenMai.png',
         children :[]
       },
       {
         name: 'VIP CLUB',
+        icon: 'assets/images/logos/header/vipClub.png',
         children :[]
       },
       {
         name: 'ĐẠI LÝ',
+        icon: 'assets/images/logos/header/daiLy.png',
         children :[]
       },
       {
         name: 'ĐẠI SỨ',
+        icon: 'assets/images/logos/header/daiSu.png',
         children :[]
       }
     ]
